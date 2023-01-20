@@ -15,10 +15,6 @@ const models = {
     return Terms.find();
   },
 
-  getOne: ({ term }) => {
-    return Terms.findOne({ term: term.toLowerCase() })
-  },
-
   save: (termObj) => {
     termObj.term = termObj.term.toLowerCase();
     return Terms.create(termObj);

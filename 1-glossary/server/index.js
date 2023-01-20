@@ -25,15 +25,6 @@ app.get('/terms', (req, res) => {
     });
 });
 
-app.post('/terms/one', (req, res) => {
-  models.getOne(req.body)
-    .then(term => res.status(201).send(JSON.stringify(term)))
-    .catch(err => {
-      console.log('error getting searched term: ', err);
-      res.status(500).send();
-    });
-});
-
 app.post('/terms', (req, res) => {
   models.save(req.body)
     .then(() => res.status(201).send("success"))
@@ -52,7 +43,8 @@ app.put('/terms', (req, res) => {
     });
 });
 
-app.delete('/terms', (req, res) => {
+// delete handler
+app.post('/terms/delete', (req, res) => {
   models.delete(req.body)
     .then(() => res.status(204).send("success"))
     .catch(err => {
