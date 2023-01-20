@@ -31,7 +31,7 @@ app.post('/terms', (req, res) => {
     .catch(err => {
       console.log('error saving new term: ', err);
       res.status(500).send("failed to save new term");
-    })
+    });
 });
 
 app.put('/terms', (req, res) => {
@@ -46,7 +46,7 @@ app.put('/terms', (req, res) => {
 // delete handler
 app.post('/terms/delete', (req, res) => {
   models.delete(req.body)
-    .then(() => res.status(204).send("success"))
+    .then(() => res.status(201).send("success"))
     .catch(err => {
       console.log(`error deleting term - "${req.body.term}": `, err);
       res.status(500).send("failed to delete term");

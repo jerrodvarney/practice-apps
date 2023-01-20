@@ -49,7 +49,8 @@ table {
 
 /* ////////// AFTER RESET ////////// */
 body {
-  background-color: #e5e5cb;
+  background-attachment: fixed;
+  background-color: #E5E5CB;
   background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%233c2a21' fill-opacity='0.29' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
   box-sizing: border-box;
   font-family: 'Gloria Hallelujah', cursive;
@@ -59,17 +60,25 @@ body {
 .header {
   align-items: center;
   background-color: #3C2A21;
+  box-shadow: #3C2A21BF 0px 5px 15px;
   display: flex;
   height: 110px;
   padding-left: 50px;
+  position: sticky;
+  top: 0;
 }
 
 .title {
   color: #D5CEA3;
-  font-size: 45px;;
+  font-size: 45px;
   font-family: 'Rock Salt', cursive;
   text-shadow: 2px 2px 5px black;
   width: 35%;
+}
+
+.title:hover {
+  cursor: pointer;
+  text-shadow: 2px 2px 3px #E5E5CB99;
 }
 
 /* ///// SEARCH COMPONENT ///// */
@@ -78,33 +87,98 @@ body {
   display: flex;
   justify-content: flex-end;
   width: 64%;
-
 }
 
+.search-field {
+  background-color: #D5CEA3;
+  border: 1px solid black;
+  border-radius: 15px;
+  color: #1A120B;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1em;
+  height: 45px;
+  margin-right: 15px;
+  padding-left: 20px;
+  width: 50%;
+}
+
+.find {
+  background-color: #D5CEA3;
+  border: 1px solid black;
+  border-radius: 15px;
+  height: 49px;
+  width: 75px;
+}
+
+.find:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.search-icon {
+  color: #3C2A21;
+  transform: scaleX(-1);
+}
 
 /* ///// BODY ///// */
 .content {
   margin: auto;
   width: 80%;
+  max-width: 1000px;
 }
 
-/* ///// ADD NEW TERM BUTTON ///// */
+/* ///// NEW TERM FORM ///// */
+.new-term-form {
+  text-align: center;
+}
+
+.input-Container {
+  display: flex;
+}
+
+#new-term {
+  background-color: #D5CEA3;
+  border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: #3C2A21BF 0px 3px 10px;
+  color: #1A120B;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1em;
+  height: 45px;
+  margin: 50px 0 30px 0;
+  padding-left: 20px;
+  width: 75%;
+}
+
+#new-def {
+  background-color: #D5CEA3;
+  border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: #3C2A21BF 0px 3px 10px;
+  color: #1A120B;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1em;
+  height: 100px;
+  padding-left: 20px;
+  width: 75%;
+}
+
 .add-term {
   background-color: #3C2A21;
   border: 3px solid #3C2A21;
   border-radius: 25px;
-  display:block;
+  box-shadow: #3C2A21BF 0px 3px 10px;
   color: #D5CEA3;
-  font-size: 25px;;
+  font-size: 25px;
   font-family: 'Gloria Hallelujah', cursive;
   padding: 10px 25px;
   margin: 30px auto 30px;
+  text-shadow: 1px 1px 2px black;
 }
 
 .add-term:hover {
   background-color: #3C2A21BF;
   cursor: pointer;
-  text-shadow: 1px 1px 2px black;
 }
 
 /* ///// WORD LIST /////*/
@@ -125,23 +199,119 @@ body {
   border-radius: 25px 25px 0 0;
   color: #D5CEA3;
   display: flex;
+  justify-content: space-between;
   min-height: 40px;
   padding: 15px 20px 10px;
 }
 
 .term {
-  /* font-family: 'Rock Salt', cursive; */
   font-size: 24px;
   text-shadow: 2px 2px 5px black;
   text-transform: uppercase;
+}
+
+.icons {
+  margin: 0 10px;
+  text-shadow: 2px 2px 5px black;
+}
+
+.icons:hover{
+  cursor: pointer;
+  transform: scale(1.5);
 }
 
 .bottom {
   background-color: #D5CEA3;
   border: 1px solid #1A120B;
   border-radius: 0 0 25px 25px;
+  box-shadow: #3C2A21BF 0px 5px 15px;
   color: #1A120B;
   font-size: 20px;
+  line-height: 1.5;
   min-height: 120px;
   padding: 15px 20px 10px;
+}
+
+/* ///// EDIT FORM ///// */
+.edit-container {
+  background-color: #1A120B90;
+  position: absolute;
+  height: fit-content;
+  height: 100000%;
+  width: 100000%;
+  top: 0;
+  left: 0;
+}
+
+.edit-form {
+  background-attachment: fixed;
+  background-color: #E5E5CB;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%233c2a21' fill-opacity='0.29' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  border: 3px solid #1A120B;
+  border-radius: 25px;
+  height: 500px;
+  left: 50%;
+  position: fixed;
+  margin-left: -25%;
+  text-align: center;
+  top: 25%;
+  width: 500px;
+}
+
+.edit-title {
+  background-color: #3C2A21;
+  border-radius: 20px 20px 0 0;
+  color: #D5CEA3;
+  font-size: 30px;
+  font-family: 'Rock Salt', cursive;
+  margin-bottom: 50px;
+  padding: 25px;
+  text-shadow: 2px 2px 5px black;
+}
+
+.term-change {
+  background-color: #D5CEA3;
+  border: 1px solid black;
+  border-radius: 15px;
+  color: #1A120B;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1em;
+  height: 45px;
+  margin-right: 15px;
+  margin-bottom: 50px;
+  padding-left: 20px;
+  width: 80%;
+}
+
+.def-change {
+  background-color: #D5CEA3;
+  border: 1px solid black;
+  border-radius: 15px;
+  color: #1A120B;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1em;
+  height: 45px;
+  margin-right: 15px;
+  margin-bottom: 75px;
+  padding-left: 20px;
+  width: 80%;
+}
+
+.edit-btns {
+  background-color: #3C2A21;
+  border: 3px solid #3C2A21;
+  border-radius: 15px;
+  box-shadow: #3C2A21BF 0px 3px 10px;
+  color: #D5CEA3;
+  font-size: 16px;
+  font-family: 'Gloria Hallelujah', cursive;
+  padding: 10px 25px;
+  margin-right: 30px;
+  text-shadow: 1px 1px 2px black;
+  width: 25%;
+}
+
+.edit-btns:hover {
+  background-color: #3C2A21BF;
+  cursor: pointer;
 }

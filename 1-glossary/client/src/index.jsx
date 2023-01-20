@@ -12,7 +12,6 @@ const App = () => {
   ///// STATE DATA /////
   const [allTerms, setAllTerms] = useState([]);
   const [terms, setTerms] = useState([]);
-  const [form, setDisplayForm] = useState(false);
 
 
   ///// EVENT HANDLERS /////
@@ -21,7 +20,7 @@ const App = () => {
     if (searchTerm.length) {
       let matches = [];
       for (let term of allTerms) {
-        if (term.term.includes(searchTerm)) {
+        if (term.term.includes(searchTerm.toLowerCase())) {
           matches.push(term);
         }
       }
@@ -29,33 +28,6 @@ const App = () => {
       setTerms(matches);
     }
   };
-
-  const displayForm = (event) => {
-    let button = event.target;
-
-    // displays form and changes button to say submit ------ add below commented funtionality next
-    if (!form) {
-      button.innerHTML = 'Submit';
-      setDisplayForm(!form)
-    } else {
-      button.innerHTML = 'Add A New Term';
-      setDisplayForm(!form);
-    }
-///////////// START HERE ////////////////
-
-    // get text from term and definition inputs
-
-    //if one or both is missing a value
-     //tell user to fill out both forms
-
-    // if length for both
-
-    // if term is in all terms
-      // tell user its already there
-    // otherwise send new term and definition to addNew function and
-      // hide form and change button text back to 'Add A New Term'
-  };
-
 
 
   ///// HTTP REQUEST HANDLERS /////
@@ -93,13 +65,12 @@ const App = () => {
   return (
     <div id="app">
       <div className="header">
-        <h1 className="title">TERMinator</h1>
+        <h1 className="title" onClick={() => setTerms(allTerms)}>TERMinator</h1>
         <Search onClick={search} />
       </div>
       <div className="content">
-        {form ? <NewTermForm /> : null}
-        <button className="add-term" onClick={displayForm}>Add A New Term</button>
-        <WordList terms={terms} />
+        <NewTermForm addNew={addNew} allTerms={allTerms} />
+        <WordList terms={terms} remove={remove} edit={edit} />
       </div>
     </div>
   );

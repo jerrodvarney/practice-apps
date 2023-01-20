@@ -21,8 +21,7 @@ const models = {
   },
 
   edit: (termObj) => {
-    let oldTerm = termObj.oldTerm;
-    let query = { term: oldTerm.toLowerCase() };
+    let query = { term: termObj.oldTerm.toLowerCase() };
     let newTermObj = {
       term: termObj.newTerm.toLowerCase(),
       definition: termObj.definition

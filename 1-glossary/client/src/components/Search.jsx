@@ -7,8 +7,7 @@ const Search = ({ onClick }) => {
     <div className="search">
       <input className="search-field" placeholder="Search for a term..."></input>
       <button className="find" onClick={onClick}>
-        Search
-        {/* A magnifying glass icon will go here. */}
+        <i className="search-icon fa-solid fa-magnifying-glass"></i>
       </button>
     </div>
   );
