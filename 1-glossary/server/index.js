@@ -20,14 +20,14 @@ app.get('/terms', (req, res) => {
   models.getAll()
     .then(terms => res.status(200).send(JSON.stringify(terms)))
     .catch(err => {
-      console.log(err);
+      console.log('error getting all terms: ', err);
       res.status(500).send();
     });
 });
 
-app.get('/terms/one', (req, res) => {
+app.post('/terms/one', (req, res) => {
   models.getOne(req.body)
-    .then(term => res.status(200).send(JSON.stringify(term)))
+    .then(term => res.status(201).send(JSON.stringify(term)))
     .catch(err => {
       console.log('error getting searched term: ', err);
       res.status(500).send();
