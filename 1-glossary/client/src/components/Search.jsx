@@ -1,12 +1,15 @@
 import React from 'react';
-const useState = React.useState
 
 
-const Search = (props) => {
+const Search = ({ onClick }) => {
 
   return (
     <div className="search">
-      <input className></input>
+      <input className="search-field" placeholder="Search for a term..."></input>
+      <button className="find" onClick={onClick}>
+        Search
+        {/* A magnifying glass icon will go here. */}
+      </button>
     </div>
   );
 };
