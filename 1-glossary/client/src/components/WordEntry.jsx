@@ -38,7 +38,7 @@ const WordEntry = (props) => {
   return (
     <div className="term-entry">
       {edit ?
-        <div>
+        <>
           <div className="edit-container"></div>
           <div className="edit-form">
             <h1 className="edit-title">Need To Make Changes?</h1>
@@ -47,7 +47,7 @@ const WordEntry = (props) => {
             <button className="edit-btns" onClick={handleCancel}>Cancel</button>
             <button className="edit-btns" onClick={handleEdit}>Submit</button>
           </div>
-        </div>
+        </>
       : null}
       <div className="top">
         <h1 className="term">{term}</h1>
