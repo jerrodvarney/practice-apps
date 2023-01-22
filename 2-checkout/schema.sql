@@ -1,6 +1,6 @@
 CREATE TABLE responses (
-  id Int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  session_id INT,
+  id Int NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE,
+  session_id varchar(100) UNIQUE,
   email varchar(100),
   username varchar(100),
   pass varchar(100),

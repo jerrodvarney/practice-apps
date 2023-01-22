@@ -8,11 +8,8 @@ const Confirmation = (props) => {
 
   ///// EVENT HANDLERS /////
   const handleClick = (event) => {
-
     //send data to server
-
-    props.showConfirm(false);
-    props.showHome(true);
+    props.send(data)
   };
 
 

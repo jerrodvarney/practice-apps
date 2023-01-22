@@ -38,7 +38,7 @@ app.get('/submit', (req, res) => {
 
 app.post('/submit', (req, res) => {
   let data = req.body;
-  let query = `INSERT INTO responses VALUES (null, ${data.session_id}, "${data.email}", "${data.username}", "${data.pass}", "${data.addr1}", "${data.addr2}", "${data.city}", "${data.st}", ${data.zip}, ${data.phone}, "${data.cardNum}", ${data.exp}, ${data.cvv}, ${data.billZip})`;
+  let query = `INSERT INTO responses VALUES (null, "${req.session_id}", "${data.email}", "${data.username}", "${data.pass}", "${data.addr1}", "${data.addr2}", "${data.city}", "${data.st}", ${data.zip}, ${data.phone}, "${data.cardNum}", ${data.exp}, ${data.cvv}, ${data.billZip})`;
   db.query(query, (err) => {
     if (err) {
       console.log('error saving new response to database: ', err);

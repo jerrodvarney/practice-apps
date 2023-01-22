@@ -23,11 +23,17 @@ const App =() => {
 
 
   ///// HTTP REQUESTS HANDLERS /////
-  let url = 'http://127/.0.0.1/';
+  let url = 'http://127.0.0.1:3000';
 
   const send = (allCustomerData) => {
-    console.log('finalized product: ', allCustomerData);
-
+    axios.post(url + '/submit', allCustomerData)
+      .then(() => {
+        console.log('all done!');
+        setCustData({});
+        showConfirm(false);
+        showHome(true);
+      })
+      .catch(err => console.error('error: ', err));
   };
 
 
@@ -40,7 +46,7 @@ const App =() => {
       { account ? <AccountForm showAccount={showAccount} showShipping={showShipping} custData={custData} setCustData={setCustData} /> : null }
       { shipping ? <ShippingForm showShipping={showShipping} showPayment={showPayment} custData={custData} setCustData={setCustData} /> : null }
       { payment ? <PaymentForm showPayment={showPayment} showConfirm={showConfirm} custData={custData} setCustData={setCustData} /> : null }
-      { confirm ? <Confirmation showConfirm={showConfirm} showHome={showHome} custData={custData} /> : null }
+      { confirm ? <Confirmation custData={custData} send={send}/> : null }
     </div>
   )
 };
