@@ -18,6 +18,6 @@ CREATE TABLE responses (
 
 
 -- INSERT INTO responses
---  (session_id, email, username, pass, addr1, addr2, city, st, zip, phone, cardNum, exp, cvv, billZip)
+--  (id, session_id, email, username, pass, addr1, addr2, city, st, zip, phone, cardNum, exp, cvv, billZip)
 
 --  VALUES (null, 10, "jerrodvarney@gmail.com", "jrod", "password", "address1", "address2", "city", "sf", 12345, 1234567890, 1234556765432, 1234, 233, 12342)

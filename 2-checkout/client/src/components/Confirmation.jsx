@@ -1,31 +1,40 @@
 import React from 'react';
+const useState = React.useState;
 
 
 const Confirmation = (props) => {
+  let data = props.custData;
+
+
+  ///// EVENT HANDLERS /////
+  const handleClick = (event) => {
+
+    //send data to server
+
+    props.showConfirm(false);
+    props.showHome(true);
+  };
+
 
   return (
-    <div className="end">
-      <div className="confirmation form">
-        <div className="top long">
-          <h1 className="form-title">CONFIRMATION</h1>
-        </div>
-        <h3 id="email" className="long" placeholder="Email"></h3> //props.data.email
-        <h3 id="name" className="half" placeholder="Name"></h3>  //props.data.name
-        <h3 id="password" className="half" placeholder="Password"></h3>  //etc etc.
-        <h3 id="addr1" className="long" placeholder="Address Line 1"></h3>
-        <h3 id="addr2" className="long" placeholder="Address Line 2"></h3>
-        <h3 id="city" className="third" placeholder="City"></h3>
-        <h3 id="state" className="third" placeholder="State"></h3>
-        <h3 id="zip" className="third" placeholder="Zip"></h3>
-        <h3 id="phone" className="long" placeholder="Phone Number"></h3>
-        <h3 id="cardNum" className="long" placeholder="Card Number"></h3>
-        <h3 id="exp" className="third" placeholder="Expiration"></h3>
-        <h3 id="cvv" className="third" placeholder="CVV"></h3>
-        <h3 id="billZip" className="third" placeholder="Billing Zip"></h3>
+    <div className="confirmation form">
+      <div className="top long">
+        <h1 className="form-title">CONFIRMATION</h1>
       </div>
-      <div className="purchase">
-        <button id="purchase-btn">PURCHASE</button>
-      </div>
+      <h3 id="email" className="long">{data.email}</h3>
+      <h3 id="name" className="half">{data.username}</h3>
+      <h3 id="password" className="half">passw***</h3>
+      <h3 id="addr1" className="long">{data.addr1}</h3>
+      <h3 id="addr2" className="long">{data.addr2}</h3>
+      <h3 id="city" className="third">{data.city}</h3>
+      <h3 id="state" className="third">{data.st}</h3>
+      <h3 id="zip" className="third">{data.zip}</h3>
+      <h3 id="phone" className="long">{data.phone}</h3>
+      <h3 id="cardNum" className="long">{data.cardNum}</h3>
+      <h3 id="exp" className="third">{data.exp}</h3>
+      <h3 id="cvv" className="third">{data.cvv}</h3>
+      <h3 id="billZip" className="third">{data.billZip}</h3>
+      <button id="purchase-btn" onClick={handleClick}>PURCHASE</button>
     </div>
   )
 };
