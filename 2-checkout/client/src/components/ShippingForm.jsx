@@ -33,16 +33,20 @@ const ShippingForm = (props) => {
 
   return (
     <div className="shipping form">
-      <div className="top long">
+      <div className="inputs">
         <h1 className="form-title">SHIPPING AND CONTACT DETAILS</h1>
+        <input id="addr1" type="text" className="long" placeholder="Address Line 1" onChange={(e) => setAddr1(e.target.value)}></input>
+        <input id="addr2" type="text" className="long" placeholder="Address Line 2" onChange={(e) => setAddr2(e.target.value)}></input>
+        <div className="justify">
+          <input id="city" type="text" className="third" placeholder="City" onChange={(e) => setCity(e.target.value)}></input>
+          <input id="state" type="text" className="third" placeholder="State" onChange={(e) => setSt(e.target.value)}></input>
+          <input id="zip" type="number" className="third" placeholder="Zip" onChange={(e) => setZip(e.target.value)}></input>
+        </div>
+        <input id="phone" type="tel" className="long" placeholder="Phone Number" onChange={(e) => setPhone(e.target.value)}></input>
+        <div className="chevron" onClick={handleClick}>
+          <h3 className="next">NEXT</h3>
+        </div>
       </div>
-      <input id="addr1" type="text" className="long" placeholder="Address Line 1" onChange={(e) => setAddr1(e.target.value)}></input>
-      <input id="addr2" type="text" className="long" placeholder="Address Line 2" onChange={(e) => setAddr2(e.target.value)}></input>
-      <input id="city" type="text" className="third" placeholder="City" onChange={(e) => setCity(e.target.value)}></input>
-      <input id="state" type="text" className="third" placeholder="State" onChange={(e) => setSt(e.target.value)}></input>
-      <input id="zip" type="number" className="third" placeholder="Zip" onChange={(e) => setZip(e.target.value)}></input>
-      <input id="phone" type="tel" className="long" placeholder="Phone Number" onChange={(e) => setPhone(e.target.value)}></input>
-      <button className="next" onClick={handleClick}>NEXT</button>
     </div>
   )
 };

@@ -41,12 +41,14 @@ const App =() => {
 
   return (
     <div id="app">
-      <h2><code>Page Cookie: {JSON.stringify(document.cookie, undefined, "\t")}</code></h2>
-      { home ? <Home showHome={showHome} showAccount={showAccount} setCustData={setCustData} /> : null }
-      { account ? <AccountForm showAccount={showAccount} showShipping={showShipping} custData={custData} setCustData={setCustData} /> : null }
-      { shipping ? <ShippingForm showShipping={showShipping} showPayment={showPayment} custData={custData} setCustData={setCustData} /> : null }
-      { payment ? <PaymentForm showPayment={showPayment} showConfirm={showConfirm} custData={custData} setCustData={setCustData} /> : null }
-      { confirm ? <Confirmation custData={custData} send={send}/> : null }
+      <div className="dimmer"></div>
+      <div className="content">
+        { home ? <Home showHome={showHome} showAccount={showAccount} setCustData={setCustData} /> : null }
+        { account ? <AccountForm showAccount={showAccount} showShipping={showShipping} custData={custData}  setCustData={setCustData} /> : null }
+        { shipping ? <ShippingForm showShipping={showShipping} showPayment={showPayment} custData={custData} setCustData={setCustData} /> : null }
+        { payment ? <PaymentForm showPayment={showPayment} showConfirm={showConfirm} custData={custData} setCustData={setCustData} /> : null }
+        { confirm ? <Confirmation custData={custData} send={send}/> : null }
+      </div>
     </div>
   )
 };

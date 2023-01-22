@@ -1,60 +1,241 @@
-/**
- * 
- * Based on Josh Comeau's CSS Reset: https://www.joshwcomeau.com/css/custom-css-reset/.
- * 
- * Feel free to edit this file as needed.
- * 
- */ 
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+  font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
+
+/* ///// AFTER RESET ///// */
 * {
-  margin: 0;
+  border-radius: 300px;
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
 }
 
-html,
 body {
+  border-radius: 0;
+  min-height: 100vh;
+}
+
+
+/* ///// MAIN CONTENT ///// */
+#app {
+  background-image: url('./images/background.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 2000px #D800A64D;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.form {
+  align-items: center;
+  display: flex;
+  height: 70vh;
+  justify-content: center;
+  width: 60vw;
+}
+
+.form-title {
+  align-items: center;
+  background-color: #31E1F7;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  color: #400D51;
+  display: flex;
+  height: 10vh;
+  font-size: 2vw;
+  justify-content: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.inputs {
+  width: 100%;
+}
+
+.long {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  font-size: 1.3vw;
+  height: 7.5vh;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+.half {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  font-size: 1.3vw;
+  height: 7.5vh;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 47%;
+}
+
+.third {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  font-size: 1.3vw;
+  height: 7.5vh;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 30%
+}
+
+.justify {
+  display: flex;
+  justify-content: space-between;
+}
+
+.next {
+  color: #400D51;
+  font-weight: bold;
+}
+
+.chevron {
+  align-items: center;
+  background-color: #31E1F7;
+  background-image: url('./images/chevron.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90% 90%;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  display: flex;
+  height: 25vh;
+  justify-content: center;
+  margin-top: -12.5vh;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  width: 15vh;
+}
+
+.chevron:hover {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px, #D800A6B3 0 0 500px 10px;
+  cursor: pointer;
+}
+
+input {
+  color: #400D51;
+}
+
+input:focus {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px, #D800A6B3 0 0 25px 2px;
+  outline-color: #400D51;
+}
+
+/* ///// HOME BUTTON ///// */
+.home {
+  height: 30vh;
+  width: 65%;
+}
+
+#home-btn {
+  background-color: #31E1F7;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  color: #400D51;
+  font-size: 7vw;
   height: 100%;
+  width: 100%;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+#home-btn:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px, #D800A6B3 0 0 500px 10px;
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
+
+/* ///// ACCOUNT FORM ///// */
+
+
+
+
+/* ///// SHIPPING FORM ///// */
+
+
+
+
+/* ///// PAYMENT FORM ///// */
+
+
+
+
+/* ///// CONFIRMATION ///// */
+
+.last {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  justify-content: center;
 }
 
-input,
-button,
-textarea,
-select {
-  font: inherit;
+.purchase-btn {
+  background-color: #31E1F7;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  color: #400D51;
+  height: 15vw;
+  justify-content: center;
+  font-size: 6vh;
+  margin-right: -27.5vh;
+  margin-top: -10vh;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: rotate(90deg);
+  width: 65vh;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-main {
-  max-width: 840px;
-  padding: 16px;
-  margin: auto;
+.purchase-btn:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px, #D800A6B3 0 0 500px 10px;
 }

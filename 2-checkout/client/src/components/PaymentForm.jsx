@@ -29,14 +29,18 @@ const PaymentForm = (props) => {
 
   return (
     <div className="payment form">
-      <div className="top long">
+      <div className="inputs">
         <h1 className="form-title">PAYMENT INFORMATION</h1>
+        <input id="cardNum" type="number" className="long" placeholder="Card Number" onChange={(e) => setCardNum(e.target.value)}></input>
+        <div className="justify">
+          <input id="exp" type="number" className="third" placeholder="Expiration" onChange={(e) => setExp(e.target.value)}></input>
+          <input id="cvv" type="number" className="third" placeholder="CVV" onChange={(e) => setCvv(e.target.value)}></input>
+          <input id="billZip" type="number" className="third" placeholder="Billing Zip" onChange={(e) => setBillZip(e.target.value)}></input>
+        </div>
+        <div className="chevron" onClick={handleClick}>
+          <h3 className="next">NEXT</h3>
+        </div>
       </div>
-      <input id="cardNum" type="number" className="long" placeholder="Card Number" onChange={(e) => setCardNum(e.target.value)}></input>
-      <input id="exp" type="number" className="third" placeholder="Expiration" onChange={(e) => setExp(e.target.value)}></input>
-      <input id="cvv" type="number" className="third" placeholder="CVV" onChange={(e) => setCvv(e.target.value)}></input>
-      <input id="billZip" type="number" className="third" placeholder="Billing Zip" onChange={(e) => setBillZip(e.target.value)}></input>
-      <button className="next" onClick={handleClick}>NEXT</button>
     </div>
   )
 };

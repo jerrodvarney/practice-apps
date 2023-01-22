@@ -15,23 +15,29 @@ const Confirmation = (props) => {
 
   return (
     <div className="confirmation form">
-      <div className="top long">
+      <div className="inputs">
         <h1 className="form-title">CONFIRMATION</h1>
+        <h3 className="last long">{data.email || 'EMAIL'}</h3>
+        <div className="justify">
+          <h3 className="last half">{data.username || 'USERNAME'}</h3>
+          <h3 className="last half">{data.pass || 'PASSWORD'}</h3>
+        </div>
+        <h3 className="last long">{data.addr1 || 'ADDRESS LINE 1'}</h3>
+        <h3 className="last long">{data.addr2 || 'ADDRESS LINE 2'}</h3>
+        <div className="justify">
+          <h3 className="last third">{data.city || 'CITY'}</h3>
+          <h3 className="last third">{data.st || 'STATE'}</h3>
+          <h3 className="last third">{data.zip || 'ZIP'}</h3>
+        </div>
+          <h3 className="last long">{data.phone || 'PHONE NUMBER'}</h3>
+          <h3 className="last long">{data.cardNum || 'CARD NUMBER'}</h3>
+        <div className="justify">
+          <h3 className="last third">{data.exp || 'EXP'}</h3>
+          <h3 className="last third">{data.cvv || 'CVV'}</h3>
+          <h3 className="last third">{data.billZip || 'BILLING ZIP'}</h3>
+        </div>
+        <button className="purchase-btn" onClick={handleClick}>PURCHASE!</button>
       </div>
-      <h3 id="email" className="long">{data.email}</h3>
-      <h3 id="name" className="half">{data.username}</h3>
-      <h3 id="password" className="half">passw***</h3>
-      <h3 id="addr1" className="long">{data.addr1}</h3>
-      <h3 id="addr2" className="long">{data.addr2}</h3>
-      <h3 id="city" className="third">{data.city}</h3>
-      <h3 id="state" className="third">{data.st}</h3>
-      <h3 id="zip" className="third">{data.zip}</h3>
-      <h3 id="phone" className="long">{data.phone}</h3>
-      <h3 id="cardNum" className="long">{data.cardNum}</h3>
-      <h3 id="exp" className="third">{data.exp}</h3>
-      <h3 id="cvv" className="third">{data.cvv}</h3>
-      <h3 id="billZip" className="third">{data.billZip}</h3>
-      <button id="purchase-btn" onClick={handleClick}>PURCHASE</button>
     </div>
   )
 };

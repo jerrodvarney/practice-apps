@@ -27,13 +27,17 @@ const AccountForm = (props) => {
 
   return (
     <div className="account form">
-      <div className="top long">
+      <div className="inputs">
         <h1 className="form-title">CREATE YOUR ACCOUNT</h1>
+        <input id="email" type="email" className="long" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
+        <div className="justify">
+          <input id="username" type="text" className="half" placeholder="Username" onChange={(e) => setName(e.target.value)}></input>
+          <input id="password" type="password" className="half" placeholder="Password" onChange={(e) => setPass(e.target.value)}></input>
+        </div>
+        <div className="chevron" onClick={handleClick}>
+          <h3 className="next">NEXT</h3>
+        </div>
       </div>
-      <input id="email" type="email" className="long" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
-      <input id="username" type="text" className="half" placeholder="Username" onChange={(e) => setName(e.target.value)}></input>
-      <input id="password" type="password" className="half" placeholder="Password" onChange={(e) => setPass(e.target.value)}></input>
-      <button className="next" onClick={handleClick}>NEXT</button>
     </div>
   )
 };
